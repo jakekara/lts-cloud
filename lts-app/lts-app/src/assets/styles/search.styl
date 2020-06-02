@@ -1,0 +1,199 @@
+@require './variables';
+
+/**
+* Search
+**/
+
+.container.page-search {
+  max-width: 1080px;
+}
+
+.search-container {
+  padding-top: 160px;
+  text-align: center;
+}
+
+.search-container .input-container {
+  width: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.search-container input {
+  padding: 9px 12px 9px 40px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.search-container select {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-image: url(../images/down-caret-gray.png);
+  background-repeat: no-repeat;
+  background-size: 11%;
+  background-position-x: 93%;
+  background-position-y: 55%;
+  height: 100%;
+  width: 100px;
+  overflow: hidden;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  display: inline-block;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: .9em;
+}
+
+.search-container .glass {
+  height: 17px;
+  width: 17px;
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  background-image: url('../images/magnifying-glass.png');
+  background-size: cover;
+}
+
+/**
+* Instructions
+**/
+
+.instructions {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/**
+* Filters
+**/
+
+.page-search .filter-container {
+  margin-top: 40px;
+}
+
+/**
+* Results
+**/
+
+.restore-instructions {
+  width: 200px;
+  display: inline-block;
+  padding-bottom: 20px;
+  position: absolute;
+  top: 0;
+  color: $brown;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/**
+* Result Table
+**/
+
+.results-table {
+  width: 795px;
+  background: #fff;
+  padding-bottom: 8px;
+  display: inline-block;
+  margin-left: 220px;
+  border: 1px solid #ddd;
+}
+
+.results-table .row {
+  padding: 5px 20px;
+  cursor: pointer;
+  font-family: courier;
+  font-size: 0.91em;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.results-table .row.headers {
+  background: #fff;
+  font-weight: 600;
+  color: #8e8d8d;
+  font-size: 14px;
+  padding: 10px 20px;
+  box-shadow: 1px 1px 3px #aaa;
+  margin-bottom: 10px;
+  cursor: default;
+}
+
+.results-table .exerpt {
+  margin-left: 35px;
+}
+
+.results-table .row:nth-of-type(2n) {
+  background: rgba(247, 242, 227, 0.3);
+}
+
+.results-table .row:hover {
+  background: $beige;
+}
+
+.results-table .row.header:hover {
+  background: #fff;
+}
+
+.results-table .row div {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.results-table .rows .idx,
+.results-table .rows .id {
+  color: #767676;
+  font-weight: 300;
+}
+
+.results-table .row .idx {
+  width: 50px;
+}
+
+.results-table .row .id {
+  width: 180px;
+}
+
+.results-table .row .hit-left {
+  width: 220px;
+  text-align: right;
+}
+
+.results-table .hit-highlight {
+  color: $brown;
+  padding: 0 6px;
+}
+
+.results-table .hit-left,
+.results-table .hit-highlight,
+.results-table .hit-right {
+  font-family: courier;
+}
+
+/**
+* Pagination
+**/
+
+.page-search .pagination {
+  margin-left: 200px;
+}
+
+/**
+* Loader
+**/
+
+.results .loader {
+  position: absolute;
+  top: -109px;
+  right: 300px;
+}

@@ -1,0 +1,253 @@
+/**
+* Testimony
+**/
+
+.testimony-modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.7);
+}
+
+.testimony-inner {
+  margin: 30px;
+}
+
+.testimony {
+  margin: 50px auto;
+  color: #000;
+  background: #fff;
+  max-width: 1000px;
+  max-height: 100%;
+}
+
+.testimony .close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 37px;
+  cursor: pointer;
+}
+
+.testimony .close img {
+  width: 16px;
+}
+
+.testimony .content {
+  position: relative;
+  padding-top: 30px;
+}
+
+.testimony .right {
+  width: 360px;
+  float: right;
+  padding-right: 20px;
+}
+
+.testimony .left {
+  overflow-x: hidden;
+  padding: 0 20px;
+}
+
+.testimony .left .left-body {
+  background: #F4F4F4;
+  margin: 0;
+}
+
+.testimony .left .transcript-text span {
+  padding-right: 4px;
+}
+
+/**
+* Left
+**/
+
+.testimony .title {
+  font-weight: 700;
+  font-size: 17px;
+  padding-bottom: 16px;
+}
+
+.testimony .left-body {
+  padding: 20px;
+  overflow: auto;
+  line-height: 1.25em;
+  font-family: 'arno-pro', serif;
+}
+
+.testimony .left-body,
+.testimony .right-body {
+  height: 70vh;
+  font-size: 18px;
+}
+
+.testimony .left-body p {
+  font-size: inherit;
+  margin-top: 0;
+}
+
+.testimony .left-body span.active {
+  background: rgba(255, 165, 0, .6);
+}
+
+.testimony .footer {
+  padding: 20px;
+  font-size: 13px;
+  line-height: .85em;
+  color: #A2A2A2;
+}
+
+.testimony .footer div:first-of-type {
+  margin-bottom: 7px;
+}
+
+.testimony .footer span {
+  line-height: 1.1em;
+}
+
+/**
+* Right
+**/
+
+.testimony .right-body {
+  position: relative;
+}
+
+.testimony .media {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.testimony .audio-container {
+  background: #f9f9f9;
+}
+
+.testimony .media-caption {
+  line-height: 1.4em;
+  font-size: 14px;
+  margin-top: 15px;
+  color: #333;
+}
+
+.testimony .metadata {
+  line-height: 1.5em;
+  font-family: Helvetica, Open Sans, serif;
+  position: absolute;
+  top: 0;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.testimony .video-media + .metadata {
+  padding-top: 280px;
+}
+
+.testimony .audio-media + .metadata {
+  padding-top: 300px;
+}
+
+.testimony .metadata .meta-label {
+  color: #999;
+}
+
+.testimony .metadata .metadata-block span {
+  word-break: break-all;
+}
+
+.no-media,
+.remote-media-link {
+  background: #fff;
+  z-index: 1;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.no-media + .metadata {
+  padding-top: 30px;
+}
+
+.remote-media-link + .metadata {
+  padding-top: 65px;
+}
+
+.testimony .no-media,
+.testimony .remote-media-link,
+.testimony .metadata {
+  font-size: 0.85em;
+}
+
+.testimony .metadata-block {
+  margin-bottom: 12px;
+}
+
+.testimony .media-container {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.testimony video {
+  background: #f9f9f9;
+  z-index: 100;
+}
+
+@media(max-width: 900px) {
+  .testimony .close {
+    top: 14px;
+    right: 14px;
+  }
+
+  .testimony .content {
+    max-height: 90vh;
+    overflow: auto;
+  }
+
+  .testimony .right {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .testimony .right-body {
+    height: auto;
+  }
+
+  .testimony .right .title {
+    padding-left: 20px;
+  }
+
+  .testimony .right .media-container {
+    margin: 5px auto 0;
+    display: block;
+    width: 100%;
+    position: initial;
+    text-align: center;
+  }
+
+  .testimony .right .metadata {
+    display: none;
+  }
+
+  .testimony .left {
+    padding-top: 20px;
+  }
+
+  .testimony .left-body {
+    margin-right: 0;
+  }
+
+  .testimony .audio-container {
+    padding-top: 20px;
+  }
+
+  .testimony .audio-container img,
+  .testimony .audio-container audio {
+    margin: 0 auto;
+    display: block;
+  }
+}
