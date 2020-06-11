@@ -11,10 +11,11 @@ The .yaml file is all you need, because the container images are publicly hosted
 
 ## Prerequisites
 
-In order to run the service locally, first make sure you have:
-* [Docker](https://www.docker.com/products/docker-desktop) installed;
-* [Kubernetes turned on](https://medium.com/@damiannolan/kubernetes-on-docker-for-windows-5ca0c6395668)
-* [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) CLI tool installed
+In order to run the service locally, first make sure you have:  
+
+1. [Docker](https://www.docker.com/products/docker-desktop) installed  
+2. [Kubernetes turned on](https://medium.com/@damiannolan/kubernetes-on-docker-for-windows-5ca0c6395668)  
+3. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) CLI tool installed  
 
 You can test this in the command line by running the following commands (the lines starting with "$" are input, the rest are output)
 
