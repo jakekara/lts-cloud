@@ -8,7 +8,10 @@ let config = {
 };
 
 // Use the browser's location so we don't 
-// have to hardcode this
+// have to hardcode this. It may be appropriate
+// to code this in if we end up hosting the 
+// frontend in a static location and the backend
+// application server somewhere else
 config.endpoint = location.protocol + '//' 
   + location.hostname
   + (location.port ? ':'+location.port: '') + "/"
