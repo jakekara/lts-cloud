@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: lts-entrypoint
+    namespace: default
+spec:
+    type: NodePort
+    selector:
+        lts: web
+    ports:
+    - port: 7082
+      name: lts-port
+      targetPort: 7082
+      nodePort: 30082
+    

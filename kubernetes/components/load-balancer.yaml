@@ -1,0 +1,25 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: lts-ingress
+  namespace: default
+  annotations:
+    nothing: ignore
+    # Note that the backend talks over HTTP.
+    # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    # TODO: Fill in with the ARN of your certificate.
+    # service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:{region}:{user id}:certificate/{id}
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-east-2:012726110015:certificate/15e1322e-ef08-4839-829c-a19d4e182093
+    # # Only run SSL on the port named "https" below.
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
+spec:
+  selector:
+    lts: web
+  ports:
+    - name: http
+      port: 80
+      targetPort: 7082
+    - name: https
+      port: 443
+      targetPort: 7082
+  type: LoadBalancer
