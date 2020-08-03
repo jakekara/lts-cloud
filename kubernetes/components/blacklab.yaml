@@ -1,0 +1,52 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lts-blacklab
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lts: blacklab
+  template:
+    metadata:
+      labels:
+        lts: blacklab
+    spec:
+      containers:
+      - name: lts-blacklab
+        image: jakekara/lts-blacklab:latest
+        # resources:
+        #   limits:
+        #     cpu: 1000m
+        #     memory: 1Gi
+        #   requests:
+        #     cpu: 150m
+        #     memory: 512Mi
+        startupProbe:
+          httpGet:
+            path: /blacklab-server-1.7.3/lts/hits?patt=%22fear%22
+            port: 8080
+          failureThreshold: 30
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /blacklab-server-1.7.3/lts/hits?patt=%22fear%22
+            port: 8080
+          timeoutSeconds: 1
+          periodSeconds: 10
+
+---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: lts-blacklab
+      namespace: default
+    spec:
+      selector:
+        lts: blacklab
+      ports:
+      - port: 8080
+        name: tomcat-port
+        targetPort: 8080

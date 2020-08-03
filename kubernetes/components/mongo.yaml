@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lts-mongo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lts: mongo
+  template:
+    metadata:
+      labels:
+        lts: mongo
+    spec:
+      containers:
+      - name: lts-mongo
+        image: jakekara/lts-mongo:latest
+        # resources:
+        #   limits:
+        #     cpu: 1000m
+        #     memory: 512Mi
+        #   requests:
+        #     cpu: 150m
+        #     memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: lts-mongo
+    namespace: default
+spec:
+    selector:
+        lts: mongo
+    ports:
+    - port: 27017
+      name: mongodb-port
+      targetPort: 27017
+                

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<div
+  className="home background-image"
+>
+  <div
+    className="top"
+  >
+    <div
+      className="brand"
+    />
+    <div>
+      <div
+        className="welcome"
+      >
+        An Anthology of Holocaust Testimonies: Yale Fortunoff Archive, USC Shoah Foundation, United States Holocaust Memorial Museum
+      </div>
+    </div>
+    <a
+      className="button brown"
+      href="/about"
+      onClick={[Function]}
+    >
+      Let's explore
+    </a>
+  </div>
+  <div
+    className="bottom"
+  >
+    <hr />
+    <p>
+      Edited by Gabor Mihaly Toth
+    </p>
+    <p>
+      Built in collaboration with the Yale Digital Humanities Lab
+    </p>
+  </div>
+</div>
+`;

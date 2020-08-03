@@ -1,0 +1,122 @@
+# apiVersion: policy/v1beta1
+# kind: PodSecurityPolicy
+# metadata:
+#   name: read-only-fs
+# spec:
+#  readOnlyRootFilesystem: true
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lts-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lts: web
+  template:
+    metadata:
+      labels:
+        lts: web
+        version: zero
+    spec:
+      containers:
+      - name: lts-app
+        image: jakekara/lts-app:latest
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lts-mongo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lts: mongo
+  template:
+    metadata:
+      labels:
+        lts: mongo
+    spec:
+      containers:
+      - name: lts-mongo
+        image: jakekara/lts-mongo:latest
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lts-blacklab
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      lts: blacklab
+  template:
+    metadata:
+      labels:
+        lts: blacklab
+    spec:
+      containers:
+      - name: lts-blacklab
+        image: jakekara/lts-blacklab:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lts-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    lts: web
+  ports:
+  - port: 7082
+    name: lts-port
+    targetPort: 7082
+    nodePort: 30082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lts-blacklab
+  namespace: default
+spec:
+  selector:
+    lts: blacklab
+  ports:
+  - port: 8080
+    name: tomcat-port
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lts-mongo
+  namespace: default
+spec:
+  selector:
+    lts: mongo
+  ports:
+  - port: 27017
+    name: mongodb-port
+    targetPort: 27017
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: lts-ingress
+  namespace: default
+spec:
+  selector:
+    lts: web
+  ports:
+    - name: http
+      port: 80
+      targetPort: 7082
+    - name: https
+      port: 443
+      targetPort: 7082
+  type: LoadBalancer

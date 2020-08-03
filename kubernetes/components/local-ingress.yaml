@@ -1,0 +1,17 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: lts-ingress
+  namespace: default
+spec:
+  selector:
+    lts: web
+  ports:
+    - name: http
+      port: 30082
+      targetPort: 7082
+    # - name: https
+    #   port: 443
+    #   targetPort: 7082
+  type: Ingress
