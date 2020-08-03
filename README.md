@@ -23,13 +23,15 @@ container.
 
 Scripts for building and running MongoDB service as a container.
 
-**Note: Requires private startup data**
+**Note: Building the images equires private startup data, but you can run the
+public DockerHub image.**
 
 ### ./tomcat
 
 Scripts for building and running BlackLab Tomcat app as a container.
 
-**Note: Requires private startup data**
+**Note: Building the images equires private startup data, but you can run the
+public DockerHub image.**
 
 ### ./kubernetes
 
