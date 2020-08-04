@@ -17,6 +17,12 @@ MacOS or other Unixy OS.
 You must also have the "lts.archive.zip" file in the mongo/s3/ directory. You
 can obtain this from the Fortunoff s3 bucket if you have sufficient access.
 
+If you have this data in an s3 bucket, you can pull it with the following script
+
+```bash
+. scripts/get-s3-data.sh AWS_PROFILE AWS_BUCKET_NAME
+```
+
 ## Instructions: Building and running
 
 This container packages the data directly into the container image. Storing data
@@ -26,13 +32,13 @@ is all hand-curated by the project owner. This results in large image sizes.
 
 To build the container, run the following commands from the mongo directory:
 
-```
-    . scripts/build.sh
+```bash
+. scripts/build.sh
 ```
 
 This will take quite a while.
 
-```
-    . scripts/run.sh
+```bash
+. scripts/run.sh
 ```
 
