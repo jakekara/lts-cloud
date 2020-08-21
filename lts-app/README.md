@@ -13,6 +13,15 @@ Docker installed and running.
 
 MacOS or other Unixy OS.
 
+## Submodule
+
+The app source code is in a submodule now, so make sure you run 
+
+```bash
+git submodule init
+git submodule update
+```
+
 ## Instructions: Building and running
 
 The frontend is a React application that needs to be built into a production
