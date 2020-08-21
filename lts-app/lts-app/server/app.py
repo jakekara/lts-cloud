@@ -15,8 +15,6 @@ from flask_cors import CORS
 from server.blacklab import search_blacklab #pylint: disable=wrong-import-position
 from server.db import get_db #pylint: disable=wrong-import-position
 
-REQUIRE_AUTH = False
-
 app = Flask(__name__, static_folder='../build')
 CORS(app)
 
@@ -26,8 +24,8 @@ app.debug = True
 cas_url = 'https://secure.its.yale.edu/cas'
 cas_client = CASClient(cas_url, auth_prefix='')
 app.secret_key = hashlib.new('ripemd160').hexdigest()
-use_cas_auth = True
-use_param_auth = True
+use_cas_auth = False
+use_param_auth = False
 
 ##
 # API routes
@@ -248,8 +246,6 @@ def auth_params_present(args):
   @returns:
     {bool} boolean indicating whether the correct auth params are present
   '''
-  if not REQUIRE_AUTH:
-    return True
   return args.get('security_code', '') == os.environ['LTS_AUTH_CODE']
 
 ##
