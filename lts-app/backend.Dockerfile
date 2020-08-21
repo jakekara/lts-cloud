@@ -1,6 +1,6 @@
 FROM python:3.6.1 as APP_DEPS
 
-COPY lts-app /lts-app
+COPY let-them-speak /lts-app
 
 WORKDIR /lts-app
 

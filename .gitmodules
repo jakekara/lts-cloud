@@ -1,0 +1,3 @@
+[submodule "lts-app/let-them-speak"]
+	path = lts-app/let-them-speak
+	url = git@github.com:YaleDHLab/let-them-speak.git

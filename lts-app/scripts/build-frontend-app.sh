@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 docker run --rm -it \
-    -v "$(pwd)/lts-app":/lts-app \
+    -v "$(pwd)/let-them-speak":/lts-app \
     lts-app-frontend-builder \
     /bin/sh -c "echo Building frontend && \
         cd /lts-app && \
