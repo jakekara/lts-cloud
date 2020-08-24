@@ -41,4 +41,3 @@ This will take quite a while.
 ```bash
 . scripts/run.sh
 ```
-
