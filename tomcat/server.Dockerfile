@@ -1,6 +1,6 @@
 FROM tomcat:9.0
 
-COPY lts/lts /lts
+COPY lts /lts
 
 RUN apt-get update && apt-get install -y maven && apt-get install unzip && mvn --version 
 
