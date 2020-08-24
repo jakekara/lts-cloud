@@ -18,12 +18,27 @@ echo
 mkdir -p ./s3
 
 echo "Copying files from AWS..."
-CMD="aws s3 sync --profile=$1 s3://$2/let-them-speak/prod/blacklab/folia.zip ./s3/folia.zip"
-# echo $CMD
-$CMD
 
-echo "Unzipping folia files"
-unzip .s3/folia.zip -d ./s3/lts
+## This doesn't work when I encapsulate the command
+## as a string, even when I escape the include/exclude
+## quotation marks. For now I'm just running the command
+## directly, without storing it in a string
+
+# CMD="aws s3 sync --profile=$1 \
+#     s3://$2/let-them-speak/prod/blacklab/ ./s3/ \
+#     --dryrun \
+#     --exclude \"*\" --include \"*folia.zip\" \
+#     "
+# echo $CMD
+
+# This version works
+aws s3 sync --profile=$1 \
+    s3://$2/let-them-speak/prod/blacklab/ ./s3/ \
+    --exclude "*" --include "*folia.zip" \
+
+# This happens in the image.
+# echo "Unzipping folia files"
+# unzip ./s3/folia.zip -d ./s3/lts
 
 
 
