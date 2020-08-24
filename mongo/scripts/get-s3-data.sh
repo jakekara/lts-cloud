@@ -16,8 +16,9 @@ fi
 echo 
 
 mkdir -p ./s3
-CMD="aws s3 sync --profile=$1 s3://$2/let-them-speak/prod/mongo/lts.archive.zip ./s3/lts.archive.zip"
-#aws s3 sync --profile="$1" "s3://$2/let-them-speak/prod/mongo/lts.archive.zip ./s3/lts.archive.zip"e
+CMD="aws s3 sync --profile=$1 \
+    --exclude='*' --include='*/lts.archive.zip' \
+    s3://$2/let-them-speak/prod/mongo/ ./s3/"
 echo $CMD
 $CMD
 
