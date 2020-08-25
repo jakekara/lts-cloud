@@ -10,13 +10,16 @@ The Let Them Speak app consists of three microservice containers:
 - mongodb database for testimony metadata
 - tomcat database for transcripts with Corpus Query Language search
 
-This repository contains code for building and deploying these containers using
-Docker and Kubernetes. The source code for the Let Them Speak web app, the
-front-end of this project resides in a submodule at ./lts-app/let-them-speak
-within this repository.
+## Use of submodules
 
-**Note: Because this uses submodules, you may want to clone this repository
-using the syntax ```git clone --recurse-submodules```**.
+This repository contains code for building and deploying the services in the
+previous section using Docker and Kubernetes. The bulk of the source code for
+the Let Them Speak project is the web application itself, which resides in a
+[different repository](https://github.com/yaledhlab/let-them-speak), a submodule
+you can find in the ./lts-app/let-them-speak directory of this repository.
+
+> Note: Because this uses submodules, you may want to clone this repository
+using the syntax `git clone --recurse-submodules`
 
 ## Data requirements
 
@@ -45,7 +48,7 @@ public DockerHub image.**
 
 Scripts for building and running BlackLab Tomcat app as a container.
 
-**Note: Building the images equires private startup data, but you can run the
+**Note: Building the images requires private startup data, but you can run the
 public DockerHub image.**
 
 ### ./kubernetes
