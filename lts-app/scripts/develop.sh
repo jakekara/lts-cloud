@@ -2,7 +2,7 @@
 
 set -e 
 
-. ./scripts/develop-frontend.sh
+#. ./scripts/develop-frontend.sh
 
 echo "Cleaning up Docker stuff"
 docker container prune -f
@@ -15,5 +15,5 @@ docker run --rm -p 7082:7082 \
     --network lts \
     --name lts-app \
     -it \
-    -v "$(pwd)/let-them-speak":/lts-app
+    -v "$(pwd)/let-them-speak":/lts-app \
     lts-app
