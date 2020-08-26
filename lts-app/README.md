@@ -62,3 +62,43 @@ Now you should be able to browse to the app at
 
 Without the mongoDB or Blacklab server running, the app will only be partially
 functional.
+
+## Developing with live reloading
+
+You can run lts-app in developer mode, which mounts the host copy of the
+let-them-speak directory and watches for changes to the frontend and backend,
+rebuilding and reloading automatically. Here's how to use it:
+
+**Start MongoDB and Tomcat/BlackLab** - Follow instructions in ../mongo and
+../tomcat to run those services.
+
+**Start frontend watcher** 
+
+From this (lts-app) directory, run:
+
+```bash
+. scripts/develop-frontend.sh
+```
+
+That script will watch the react app dependency graph for changes and rebuild
+the `let-them-speak/build` directory whenever changes are detected.
+
+Next, in a different terminal, run:
+
+```bash
+. scripts/develop.sh
+```
+
+That script will run the backend app, watching for any changes to the Flask
+backend and reloading whenever changes are detected.
+
+**Cleanup** This process will create and leave the `let-them-speak/node_modules`
+and `let-them-speak/build` directories on your host file system. In order to
+remove these when you're done developing, run:
+
+```bash
+. scripts/clean.sh
+```
+
+You may want to keep these directories around anyway, to speed up rebuilds when
+you restart develop mode.
