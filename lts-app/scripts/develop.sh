@@ -5,7 +5,7 @@ set -e
 #. ./scripts/develop-frontend.sh
 
 echo "Cleaning up Docker stuff"
-docker container prune -f
+# docker container prune -f
 
 echo "Creating an lts network" 
 docker network create lts 2> /dev/null && echo "Created network" || echo "Network already exists"
