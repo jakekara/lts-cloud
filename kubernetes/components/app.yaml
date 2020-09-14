@@ -15,24 +15,24 @@ spec:
         version: zero
     spec:
       containers:
-      - name: lts-app
-        image: jakekara/lts-app:latest
-        env:
-          - name: LTS_AUTH_CODE
-            value: "26950978009823473"
-        # resources:
-        #   limits:
-        #     cpu: 250m
-        #     memory: 512Mi
-        #   requests:
-        #     cpu: 150m
-        #     memory: 512Mi
-        livenessProbe:
-          httpGet:
-            path: /api/search?query=fear&start=0
-            port: 7082
-          timeoutSeconds: 5
-          periodSeconds: 60
+        - name: lts-app
+          image: jakekara/lts-app:latest
+          env:
+            - name: LTS_AUTH_CODE
+              value: "26950978009823473"
+          # resources:
+          #   limits:
+          #     cpu: 250m
+          #     memory: 512Mi
+          #   requests:
+          #     cpu: 150m
+          #     memory: 512Mi
+          livenessProbe:
+            httpGet:
+              path: /api/search?query=fear&start=0
+              port: 7082
+            timeoutSeconds: 5
+            periodSeconds: 60
 ---
 apiVersion: v1
 kind: Service
@@ -43,7 +43,6 @@ spec:
   selector:
     lts: web
   ports:
-  - port: 7082
-    name: lts-app-port
-    targetPort: 7082
-          
+    - port: 7082
+      name: lts-app-port
+      targetPort: 7082
