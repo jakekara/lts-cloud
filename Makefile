@@ -9,10 +9,12 @@ start-blacklab:
 
 start-lts-app-frontend:
 	cd lts-app; \
+		. ~/.zshrc; \
 		. scripts/develop-frontend.sh
 
 start-lts-app-backend:
 	cd lts-app; \
+		. ~/.zshrc; \
 		. scripts/develop.sh
 
 
