@@ -49,7 +49,7 @@ bash scripts/build-indexer-image.sh
 This will take a while.
 
 ```bash
-bash scripts/run-indexer.image.sh
+bash scripts/run-indexer-image.sh
 ```
 
 ### Build the server image
@@ -84,14 +84,14 @@ While the server is running locally, run:
 bash scripts/test-server.sh
 ```
 
-You may also want to just ge the http status code with:
+You may also want to just get the http status code with:
 
 ```bash
-bash scripts/test-server-image.sh | grep HTTP/1.1
+bash scripts/test-server.sh | grep HTTP/1.1
 ```
 
 Or save the output to a test output file:
 
 ```bash
-bash scripts/test-server-image.sh > test.out
+bash scripts/test-server.sh > test.out
 ```
