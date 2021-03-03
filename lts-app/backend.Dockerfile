@@ -1,4 +1,5 @@
-FROM python:3.6.1 as APP_DEPS
+#FROM python:3.6.1 as APP_DEPS
+FROM lts-app-backend-deps as APP_DEPS
 
 COPY let-them-speak /lts-app
 
@@ -6,7 +7,7 @@ WORKDIR /lts-app
 
 # Pinning pip 20.2 until this issue is fixed https://github.com/pypa/pip/issues/9180 
 #RUN pip install -U pip && pip install -r requirements.txt
-RUN pip install --upgrade pip~=20.2.0 && pip install -r requirements.txt
+#RUN pip install --upgrade pip~=20.2.0 && pip install -r requirements.txt
 
 EXPOSE 7082
 

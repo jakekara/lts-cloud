@@ -1,5 +1,6 @@
-FROM node:8-alpine
+#FROM node:8-alpine
+FROM lts-app-frontend-deps
 
-WORKDIR /lts-app
+COPY let-them-speak /lts-app
 
-
+WORKDIR /lts-app    

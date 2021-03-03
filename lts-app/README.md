@@ -35,21 +35,21 @@ complete app, run the following commands from within the lts-app directory:
 
 ```bash
 . scripts/build-frontend-builder.sh
+. scripts/build-backend-builder.sh
 . scripts/build-frontend-app.sh
 . scripts/build-backend-app.sh
 ```
 
 *Note*: You can use the "scripts/build.sh" script instead of running each of
-these three commands separately, but that's only handy for the initial setup.
-Generally, you won't need to run all three scripts, and running just the one you
-need will save time:
+these three commands separately, but generally, you won't need to run all three
+scripts, and running just the one you need will save time:
 
-* Run build-frontend-builder.sh whenever the package.json dependencies change and
-  you need different dependencies to build the frontend app.
-* Run build-frontend-app.sh when you already have an up to date builder image
-  and need to recompile the React app.
-* Run build-backend-app.sh whenever you have made changes to the backend app or
-  frontend app code base.
+* Run *build-frontend-builder.sh* whenever the package.json dependencies change
+* Run *build-backend-builder.sh* whenever the python app dependencies change
+* Run *build-frontend-app.sh* when you already have an up-to-date front-end
+  builder image and need to recompile the React app.
+* Run *build-backend-app.sh* when you already have an up-to-date backend builder
+  image and you have made changes to the backend app or frontend app code base.
 
 To run the container, use:
 
