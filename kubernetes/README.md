@@ -11,12 +11,12 @@ The .yaml file is all you need, because the container images are publicly hosted
 
 ## Prerequisites
 
-In order to run the service locally, first make sure you have:  
+In order to run the service locally, first make sure you have:
 
-1. A copy of lts.yaml from this directory  
-2. [Docker](https://www.docker.com/products/docker-desktop) installed  
-3. [Kubernetes turned on](https://medium.com/@damiannolan/kubernetes-on-docker-for-windows-5ca0c6395668)  
-4. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) CLI tool installed  
+1. A copy of lts.yaml from this directory
+2. [Docker](https://www.docker.com/products/docker-desktop) installed
+3. [Kubernetes turned on](https://medium.com/@damiannolan/kubernetes-on-docker-for-windows-5ca0c6395668)
+4. [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) CLI tool installed
 
 You can test this in the command line by running the following commands (the lines starting with "$" are input, the rest are output)
 
@@ -64,7 +64,7 @@ Make sure to test out the search page and the fragments tree to confirm that not
 
 To clean up, run:
 
-```bash
+````bash
 $ kubectl delete -f lts.yaml
 deployment.apps "lts-app" deleted
 deployment.apps "lts-mongo" deleted
@@ -73,3 +73,4 @@ service "lts-entrypoint" deleted
 service "lts-blacklab" deleted
 service "lts-mongo" deleted
 service "lts-ingress" deleted```
+````
