@@ -17,6 +17,7 @@ spec:
       containers:
       - name: lts-blacklab
         image: jakekara/lts-blacklab:latest
+        imagePullPolicy: Always
         # resources:
         #   limits:
         #     cpu: 1000m

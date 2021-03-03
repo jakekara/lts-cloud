@@ -17,6 +17,7 @@ spec:
       containers:
         - name: lts-app
           image: jakekara/lts-app:latest
+          imagePullPolicy: Always
           env:
             - name: LTS_AUTH_CODE
               value: "26950978009823473"

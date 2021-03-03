@@ -16,6 +16,7 @@ spec:
       containers:
       - name: lts-mongo
         image: jakekara/lts-mongo:latest
+        imagePullPolicy: Always
         # resources:
         #   limits:
         #     cpu: 1000m
