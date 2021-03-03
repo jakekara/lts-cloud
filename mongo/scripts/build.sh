@@ -8,6 +8,6 @@ echo
 set -e
 
 docker build \
-    -f lts-mongo.Dockerfile \
-    --tag lts-mongo \
-    .
+-f lts-mongo.Dockerfile \
+--tag lts-mongo \
+.
