@@ -1,5 +1,5 @@
 #FROM python:3.6.1 as APP_DEPS
-FROM lts-app-backend-deps as APP_DEPS
+FROM lts-app-backend-deps as app_deps
 
 COPY let-them-speak /lts-app
 
@@ -11,7 +11,7 @@ WORKDIR /lts-app
 
 EXPOSE 7082
 
-FROM APP_DEPS
+FROM app_deps
 
 ENV MONGO_HOST=lts-mongo
 ENV TOMCAT_HOST=lts-blacklab
